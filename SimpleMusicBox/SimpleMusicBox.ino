@@ -95,6 +95,7 @@ const Note music[] = {
   {TONE_DO2, DUR_2},
 };
 
+
 const int LED_PIN[4] = {9, 10, 11, 12};                   // 4つのLEDにつないでいるピン番号
 const int SPEAKER_PIN = 6;                                // スピーカーに繋いでいるピン番号
 const int musicLength = sizeof(music) / sizeof(music[0]); // 再生する音楽の長さ(musicの要素数)
@@ -108,7 +109,6 @@ void setup() {
 }
 
 int count = 0;
-int debug = 0;
 void loop() {
   // 明るさが一定値以上になるまでは鳴らさない
   while (analogRead(A0) <= 80) {
