@@ -113,11 +113,13 @@ void loop() {
   // 明るさが一定値以上になるまでは鳴らさない
   while (analogRead(A0) <= 80) {
     count = 0;
+    delay(300);
   }
   // 一度再生し終えたらカウンタをリセットし、再び暗くなるまで鳴らさない
   if (musicLength <= count) {
     count = 0;
-    while (analogRead(A0) > 80); // この行を消すとループして再生するようになる
+    while (analogRead(A0) > 80) // この行と、
+      delay(300);               // この行を消すとループして再生するようになる
   }
 
   digitalWrite(LED_PIN[count % 4], HIGH);
